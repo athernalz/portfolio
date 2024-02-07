@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Akira+Expanded:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Akira Expanded', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above everything else */
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Fade out animation */
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction while loading */
+}
+
+.loading-text {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 32px;
+    color: #1d47ff; /* Changed color to #1d47ff */
+    margin: 0;
+    opacity: 0;
+    animation: zoomInFadeOut 2.5s ease-out forwards; /* Zoom in and fade out animation */
+    text-transform: lowercase; /* Transform text to lowercase */
+}
+
+@keyframes zoomInFadeOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.4); /* Starting scale reduced for smoother animation */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.80); /* Ending scale adjusted */
+    }
+}
+
+.title {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.title h1 {
+    color: #1d47ff; /* Changed color to #1d47ff */
+    font-size: 32px;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(517.5px, 1fr)); /* Adjusted column width */
+    gap: 45px; /* Adjusted gap */
+    padding: 45px; /* Adjusted padding */
+    max-width: 4404.375px; /* Increased by 50% */
+    margin: auto;
+}
+
+.video-item {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    width: 100%; /* Removed the fixed width */
+    height: 100%; /* Removed the fixed height */
+}
+
+.video-item:hover {
+    background-color: rgba(56, 93, 255, 0.2); /* Use branding blue color with alpha */
+}
+
+.video-item h2,
+.video-item p {
+    margin: 0;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="loading-screen">
+    <h1 class="loading-text">athernals</h1>
+</div>
+
+<div class="grid-container">
+    <div class="video-item">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/AqgEdVy4niM" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+    </div>
+    <div class="video-item">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UNW4hXf20Ho" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="video-item">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/l5mgY2LHW0w" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="video-item">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ndH2iuN-zQE" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="video-item">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QZGdZXFB41c" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="video-item">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jWyxWQcPRy0" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+    </div>
+</div>
+
+<div class="social-icons">
+    <a href="mailto:contact@athernals.com" target="_blank">
+        <img src="gmail-website.png" alt="Gmail Icon">
+    </a>
+    <a href="https://twitter.com/athernalz" target="_blank">
+        <img src="x-website.png" alt="Twitter Icon">
+    </a>
+</div>
+
+<script>
+    // Hide the loading screen after 1.05 seconds
+    setTimeout(function(){
+        document.querySelector('.loading-screen').classList.add('hidden');
+    }, 1300);
+</script>
+
+</body>
+</html>
